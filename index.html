@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile-friendly Financial Accounting tutor for DU B.Com (Hons) Semester 1.">
+  <title>DU Financial Accounting Tutor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="logo">FA</span>
+      <span><strong>DU Accounts Tutor</strong><small>B.Com (Hons) • Semester 1</small></span>
+    </a>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode">☾</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">PROJECT 1 • MVP</span>
+        <h1>Financial Accounting, made simpler.</h1>
+        <p>Learn core concepts step by step and practise exam-style questions—mobile-friendly and without a paid API.</p>
+        <div class="actions">
+          <a class="btn primary" href="#study">Start studying</a>
+          <a class="btn secondary" href="#practice">Generate practice</a>
+        </div>
+      </div>
+      <aside class="progress-card">
+        <span>Your progress</span>
+        <strong><span id="completedCount">0</span>/<span id="topicCount">0</span></strong>
+        <div class="track"><div id="progressBar" class="bar"></div></div>
+        <small>Saved on this device</small>
+      </aside>
+    </section>
+
+    <section class="stats">
+      <article><strong>6</strong><span>Starter topics</span></article>
+      <article><strong>2</strong><span>Languages</span></article>
+      <article><strong>₹0</strong><span>API cost</span></article>
+    </section>
+
+    <section id="study" class="panel">
+      <div class="section-head">
+        <div><span class="eyebrow">STUDY MODE</span><h2>Choose a topic</h2></div>
+        <label>Language
+          <select id="languageSelect">
+            <option value="english">English</option>
+            <option value="hinglish">Hinglish</option>
+          </select>
+        </label>
+      </div>
+      <div class="study-grid">
+        <nav id="topicList" class="topic-list" aria-label="Accounting topics"></nav>
+        <article id="lessonCard" class="lesson-card" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section id="practice" class="panel">
+      <div class="section-head">
+        <div><span class="eyebrow">PRACTICE MODE</span><h2>Question generator</h2></div>
+      </div>
+      <form id="generatorForm" class="generator">
+        <label>Topic<select id="questionTopic" required></select></label>
+        <label>Question type
+          <select id="questionType">
+            <option value="mixed">Mixed</option>
+            <option value="mcq">MCQ</option>
+            <option value="short">Short Answer</option>
+            <option value="long">Long Answer</option>
+          </select>
+        </label>
+        <label>Difficulty
+          <select id="difficulty">
+            <option value="mixed">Mixed</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <button class="btn primary" type="submit">Generate questions</button>
+      </form>
+      <div id="questionOutput" class="output" aria-live="polite">
+        <p class="empty">Your practice questions will appear here.</p>
+      </div>
+    </section>
+
+    <aside class="notice">
+      <strong>Academic note:</strong> This is an initial concept-practice version. Syllabus coverage and exam guidance will be verified against official DU sources in the next project phase.
+    </aside>
+  </main>
+
+  <footer>Built by Arpit Yadav • Project 1</footer>
+  <script src="app.js"></script>
+</body>
+</html>
